@@ -69,4 +69,12 @@
         text-transform: uppercase;
 		font-family: 'Roboto Mono', monospace;
     }
+
+	@media (max-width: 400px) { 
+        #intro {
+			min-height: 50vh;
+			margin-top: 4rem;
+		}
+    }
+
 </style>

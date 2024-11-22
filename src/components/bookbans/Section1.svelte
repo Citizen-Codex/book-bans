@@ -19,7 +19,7 @@
 		<Title /> 
 	</div>
 
-	<p class="copy">
+	<p class="copy" style="margin-top: 0;">
 		This past July, the Donnelly Public Library in Idaho was forced to do the unthinkable: <a href="https://donnelly.lili.org/new-rules-at-the-library/">ban minors from entering</a> without an accompanying guardian or written parental consent. The library effectively turned adults-only. This drastic measure came in response to a new state law requiring libraries to sequester all books deemed inappropriate for minors within 60 days of receiving a complaint—an impossible task given the library's limited space. 
 	</p>
 
