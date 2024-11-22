@@ -118,11 +118,28 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 			display: block; 
 			gap: 0; 
 		}
+
+		.step {
+			position: relative;
+			z-index: 1000;
+		}
+
+		.sticky {
+			position: sticky;
+			z-index: 0;
+		}
 	}
 
 	@media (max-width: 800px) {
 		.step {
 			max-width: 30rem;
+			position: relative;
+			z-index: 1000;
+		}
+
+		.sticky {
+			position: sticky;
+			z-index: 0;
 		}
 	}
 

@@ -73,7 +73,7 @@
 	@media (max-width: 400px) { 
         #intro {
 			min-height: 50vh;
-			margin-top: 4rem;
+			margin-top: 6rem;
 		}
     }
 
