@@ -64,7 +64,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 	}
 	#text-cards {
 		position: relative;
-		z-index: 1000;
+		z-index: 1000 !important;
 	}
 	.scrolly-container {
 		width: 100%;
@@ -74,7 +74,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 	}
 	.scrolly-content {
 		position: relative;
-		z-index: 1000;
+		z-index: 1000 !important;
 	}
 	.sticky {
 		position: sticky;
@@ -84,7 +84,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		max-width: 80rem;
 		width: 100%; 
 		margin: 0;
-		z-index: 0;
+		z-index: 0 !important;
 		overflow-x: hidden;
 		pointer-events: none;
 		display: flex;
@@ -94,7 +94,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 	.step {
 		height: 100vh;
 		text-align: center;
-		z-index: 1000;
+		z-index: 1000 !important;
 		max-width: 40rem;
 		margin: 0 auto;
 		position: relative;
@@ -109,7 +109,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		background-color: #FFFFFF;
 		border: 1px solid black;
 		box-shadow: 4px 6px 6px #00000046; 
-		z-index: 1000;
+		z-index: 1000 !important;
 	}
 	:global(.step .strong) {
 		color: black;
@@ -118,7 +118,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		color: black;
 		font-family: var(--sans);
 		padding: 0.25rem;
-		z-index: 1000;
+		z-index: 1000 !important;
 	}
 	.spacer {
 		height: 75vh;
@@ -135,17 +135,17 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 
 		.step {
 			position: relative;
-			z-index: 1000;
+			z-index: 1000 !important;
 		}
 
 		.sticky {
 			position: sticky;
-			z-index: 0;
+			z-index: 0 !important;
 		}
 
 		.scrolly-content {
 			position: relative;
-			z-index: 1000;
+			z-index: 1000 !important;
 		}
 	}
 
@@ -153,17 +153,17 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		.step {
 			max-width: 30rem;
 			position: relative;
-			z-index: 1000;
+			z-index: 1000 !important;
 		}
 
 		.sticky {
 			position: sticky;
-			z-index: 0;
+			z-index: 0 !important;
 		}
 
 		.scrolly-content {
 			position: relative;
-			z-index: 1000;
+			z-index: 1000 !important;
 		}
 	}
 
