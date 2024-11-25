@@ -31,8 +31,8 @@ declare module '$env/static/private' {
 	export const NODE: string;
 	export const NVM_CD_FLAGS: string;
 	export const INIT_CWD: string;
-	export const TERM: string;
 	export const SHELL: string;
+	export const TERM: string;
 	export const TMPDIR: string;
 	export const HOMEBREW_REPOSITORY: string;
 	export const npm_config_global_prefix: string;
@@ -65,8 +65,8 @@ declare module '$env/static/private' {
 	export const npm_config_node_gyp: string;
 	export const XPC_SERVICE_NAME: string;
 	export const npm_package_version: string;
-	export const HOME: string;
 	export const SHLVL: string;
+	export const HOME: string;
 	export const HOMEBREW_PREFIX: string;
 	export const LOGNAME: string;
 	export const npm_config_cache: string;
@@ -114,8 +114,8 @@ declare module '$env/dynamic/private' {
 		NODE: string;
 		NVM_CD_FLAGS: string;
 		INIT_CWD: string;
-		TERM: string;
 		SHELL: string;
+		TERM: string;
 		TMPDIR: string;
 		HOMEBREW_REPOSITORY: string;
 		npm_config_global_prefix: string;
@@ -148,8 +148,8 @@ declare module '$env/dynamic/private' {
 		npm_config_node_gyp: string;
 		XPC_SERVICE_NAME: string;
 		npm_package_version: string;
-		HOME: string;
 		SHLVL: string;
+		HOME: string;
 		HOMEBREW_PREFIX: string;
 		LOGNAME: string;
 		npm_config_cache: string;

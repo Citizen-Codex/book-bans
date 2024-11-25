@@ -19,17 +19,20 @@
 	<div class="sticky">
 		<Books scrollIndex={scrollIndex} />
 	</div>
-	<Scrolly bind:value={scrollIndex}>
-		{#if copy.length > 0}
-			{#each copy as text, i}
-				<div class="step">
-					<div class="step-inner">
-						<p>{@html text.value}</p>
+
+	<div class="scrolly-content">
+		<Scrolly bind:value={scrollIndex}>
+			{#if copy.length > 0}
+				{#each copy as text, i}
+					<div class="step">
+						<div class="step-inner">
+							<p>{@html text.value}</p>
+						</div>
 					</div>
-				</div>
-			{/each}
-		{/if}
-	</Scrolly>
+				{/each}
+			{/if}
+		</Scrolly>
+	</div>
 	<div class="spacer" />
 </section>
 
@@ -52,6 +55,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.scrolly-content {
+		position: relative;
+		z-index: 1000;
 	}
 	.spacer {
 		height: 75vh;
@@ -83,10 +90,14 @@
 		font-family: var(--sans);
 		font-weight: normal !important;
 		padding: 0.25rem;
+		z-index: 1000;
 	}
 
 	@media (max-width: 800px) { 
-        
+        .scrolly-content {
+			position: relative;
+			z-index: 1000;
+		}
     }
 	
 </style>
