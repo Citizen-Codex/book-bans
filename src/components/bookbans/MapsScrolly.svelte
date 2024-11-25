@@ -66,6 +66,10 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		justify-content: space-between;
 		gap: 4rem; 
 	}
+	.scrolly-content {
+		position: relative;
+		z-index: 1000;
+	}
 	.sticky {
 		position: sticky;
 		top: 0;
@@ -81,14 +85,10 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		justify-content: center;
 		align-items: center;
 	}
-	.scrolly-content {
-		position: relative;
-		z-index: 10;
-	}
 	.step {
 		height: 100vh;
 		text-align: center;
-		z-index: 10;
+		z-index: 1000;
 		max-width: 40rem;
 		margin: 0 auto;
 		position: relative;
@@ -103,7 +103,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		background-color: #FFFFFF;
 		border: 1px solid black;
 		box-shadow: 4px 6px 6px #00000046; 
-		z-index: 10;
+		z-index: 1000;
 	}
 	:global(.step .strong) {
 		color: black;
@@ -112,6 +112,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		color: black;
 		font-family: var(--sans);
 		padding: 0.25rem;
+		z-index: 1000;
 	}
 	.spacer {
 		height: 75vh;
@@ -135,6 +136,11 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 			position: sticky;
 			z-index: 0;
 		}
+
+		.scrolly-content {
+			position: relative;
+			z-index: 1000;
+		}
 	}
 
 	@media (max-width: 800px) {
@@ -147,6 +153,11 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		.sticky {
 			position: sticky;
 			z-index: 0;
+		}
+
+		.scrolly-content {
+			position: relative;
+			z-index: 1000;
 		}
 	}
 
