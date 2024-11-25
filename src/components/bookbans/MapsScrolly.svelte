@@ -23,28 +23,31 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 	<div class="sticky">
 		<Maps scrollIndex={scrollIndex} />
 	</div>
-
-	<Scrolly bind:value={scrollIndex}>
-		{#if copy.length > 0}
-		  {#each copy as text, i}
-			{#if Array.isArray(text.value)}
-			  <div class="step">
-				{#each text.value as subText}
-				  <div class="step-inner">
-					<p>{@html subText}</p>
-				  </div>
-				{/each}
-			  </div>
-			{:else}
-			  <div class="step">
-				<div class="step-inner">
-				  <p>{@html text.value}</p>
+	
+	<div class="scrolly-content">
+		<Scrolly bind:value={scrollIndex}>
+			{#if copy.length > 0}
+			{#each copy as text, i}
+				{#if Array.isArray(text.value)}
+				<div class="step">
+					{#each text.value as subText}
+					<div class="step-inner">
+						<p>{@html subText}</p>
+					</div>
+					{/each}
 				</div>
-			  </div>
+				{:else}
+				<div class="step">
+					<div class="step-inner">
+					<p>{@html text.value}</p>
+					</div>
+				</div>
+				{/if}
+			{/each}
 			{/if}
-		  {/each}
-		{/if}
-	  </Scrolly>
+		</Scrolly>
+	</div>
+
 	  
 	<div class="spacer" />
 </section>
@@ -78,10 +81,14 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		justify-content: center;
 		align-items: center;
 	}
+	.scrolly-content {
+		position: relative;
+		z-index: 10;
+	}
 	.step {
 		height: 100vh;
 		text-align: center;
-		z-index: 1000;
+		z-index: 10;
 		max-width: 40rem;
 		margin: 0 auto;
 		position: relative;
@@ -96,7 +103,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		background-color: #FFFFFF;
 		border: 1px solid black;
 		box-shadow: 4px 6px 6px #00000046; 
-		z-index: 1000;
+		z-index: 10;
 	}
 	:global(.step .strong) {
 		color: black;
