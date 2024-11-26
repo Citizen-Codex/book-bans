@@ -8,17 +8,11 @@
 		}
 	  }
 	],
-	"rewrites": [
+	"routes": [
 	  {
-		"source": "/our-stories/book-bans/:subdir*",
-		"destination": "https://bookbans.citizencodex.com/:subdir*"
-	  },
-	  {
-		"source": "/(.*)",
-		"destination": "/"
+		"src": "/(.*)",
+		"dest": "/$1"
 	  }
-	],
-	"cleanUrls": true, 
-	"trailingSlash": false
+	]
   }
   
