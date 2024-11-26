@@ -10,8 +10,20 @@
 	],
 	"rewrites": [
 	  {
-		"source": "/(.*)",
-		"destination": "/book-bans/$1"
+		"source": "/book-bans/",
+		"destination": "https://projects.citizencodex.com/book-bans/"
+	  },
+	  {
+		"source": "/book-bans/:match*",
+		"destination": "https://projects.citizencodex.com/book-bans/:match*"
+	  },
+	  {
+		"source": "/",
+		"destination": "https://projects.citizencodex.com/book-bans/"
+	  },
+	  {
+		"source": "/:match*",
+		"destination": "https://projects.citizencodex.com/book-bans/:match*"
 	  }
 	]
   }
