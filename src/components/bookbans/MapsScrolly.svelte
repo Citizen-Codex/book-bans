@@ -24,31 +24,29 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		<Maps scrollIndex={scrollIndex} />
 	</div>
 	
-	<section id="text-cards">
-		<div class="scrolly-content">
-			<Scrolly bind:value={scrollIndex}>
-				{#if copy.length > 0}
-				{#each copy as text, i}
-					{#if Array.isArray(text.value)}
-					<div class="step">
-						{#each text.value as subText}
-						<div class="step-inner">
-							<p>{@html subText}</p>
-						</div>
-						{/each}
+	<div class="scrolly-content">
+		<Scrolly bind:value={scrollIndex}>
+			{#if copy.length > 0}
+			{#each copy as text, i}
+				{#if Array.isArray(text.value)}
+				<div class="step">
+					{#each text.value as subText}
+					<div class="step-inner">
+						<p>{@html subText}</p>
 					</div>
-					{:else}
-					<div class="step">
-						<div class="step-inner">
-						<p>{@html text.value}</p>
-						</div>
+					{/each}
+				</div>
+				{:else}
+				<div class="step">
+					<div class="step-inner">
+					<p>{@html text.value}</p>
 					</div>
-					{/if}
-				{/each}
+				</div>
 				{/if}
-			</Scrolly>
-		</div>
-	</section>
+			{/each}
+			{/if}
+		</Scrolly>
+	</div>
 
 	  
 	<div class="spacer" />
@@ -62,10 +60,6 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		justify-content: space-between;
 		width: 100%;
 	}
-	#text-cards {
-		position: relative;
-		z-index: 1000 !important;
-	}
 	.scrolly-container {
 		width: 100%;
 		display: flex;
@@ -74,7 +68,8 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 	}
 	.scrolly-content {
 		position: relative;
-		z-index: 1000 !important;
+		z-index: 10;
+		transform: translate3d(0, 0, 0);
 	}
 	.sticky {
 		position: sticky;
