@@ -13,6 +13,16 @@
 		"src": "/(.*)",
 		"dest": "/$1"
 	  }
+	],
+	"rewrites": [
+	  {
+		"source": "/our-stories/book-bans/:subdir*",
+		"destination": "https://bookbans.citizencodex.com/:subdir*"
+	  },
+	  {
+		"source": "/(.*)",
+		"destination": "/$1"
+	  }
 	]
   }
   
