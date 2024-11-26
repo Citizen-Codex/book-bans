@@ -71,7 +71,7 @@
 
 <figure class="folded">
 	<!-- SVG Map -->
-	<svg viewBox="0 0 975 610" class="fold-me-please">
+	<svg viewBox="0 0 975 610" class="fold-me-please"> 
 		<!-- Counties -->
 		{#each counties as feature}
 			<path 
@@ -188,6 +188,7 @@ figure.folded {
 }
 
 svg.fold-me-please {
+  position: relative;
   width:100%;
   height:100%;
   object-fit:cover;

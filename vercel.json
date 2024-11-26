@@ -13,18 +13,6 @@
 		"src": "/(.*)",
 		"dest": "/$1"
 	  }
-	],
-	"rewrites": [
-		{
-			"source": "/:path*",
-			"has": [
-				{
-					"type": "host",
-					"value": "bookbans.citizencodex.com"
-				}
-			],
-			"destination": "/our-stories/book-bans/:path*"
-		}
 	]
   }
   

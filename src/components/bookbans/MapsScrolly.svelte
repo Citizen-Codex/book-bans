@@ -84,9 +84,9 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 		max-width: 80rem;
 		width: 100%; 
 		margin: 0;
-		z-index: 0 !important;
-		overflow-x: hidden;
-		pointer-events: none;
+		z-index: 1 !important;
+		/* overflow-x: hidden;
+		pointer-events: none; */
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -140,7 +140,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 
 		.sticky {
 			position: sticky;
-			z-index: 0 !important;
+			z-index: 1 !important;
 		}
 
 		.scrolly-content {
@@ -158,7 +158,7 @@ $: console.log("Parent scrollIndex:", scrollIndex);
 
 		.sticky {
 			position: sticky;
-			z-index: 0 !important;
+			z-index: 1 !important;
 		}
 
 		.scrolly-content {
