@@ -8,12 +8,6 @@
 		}
 	  }
 	],
-	"routes": [
-	  {
-		"src": "/(.*)",
-		"dest": "/$1"
-	  }
-	],
 	"rewrites": [
 	  {
 		"source": "/our-stories/book-bans/:subdir*",
@@ -21,8 +15,10 @@
 	  },
 	  {
 		"source": "/(.*)",
-		"destination": "/$1"
+		"destination": "/"
 	  }
-	]
+	],
+	"cleanUrls": true, 
+	"trailingSlash": false
   }
   
