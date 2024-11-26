@@ -1413,7 +1413,7 @@ const Index = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 function version() {
   console.log("--- --- --- --- --- ---");
   console.log(`svelte-starter: ${"5.23.0"}`);
-  console.log(`build: ${"2024-11-26-11:51"}`);
+  console.log(`build: ${"2024-11-26-12:08"}`);
   console.log("--- --- --- --- --- ---");
 }
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
