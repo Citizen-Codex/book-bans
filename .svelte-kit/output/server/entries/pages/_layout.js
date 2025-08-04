@@ -1,3 +1,4 @@
+import "../../chunks/client.js";
 const prerender = true;
 const trailingSlash = "always";
 export {

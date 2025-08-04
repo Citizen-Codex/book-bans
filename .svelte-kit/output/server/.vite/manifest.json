@@ -9,6 +9,13 @@
       "_paths.js"
     ]
   },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js"
+    ]
+  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
@@ -55,14 +62,17 @@
     "isEntry": true,
     "imports": [
       "_ssr.js",
-      "_exports.js"
+      "_client.js"
     ]
   },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",
     "name": "entries/pages/_layout",
     "src": "src/routes/+layout.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_client.js"
+    ]
   },
   "src/routes/+layout.svelte": {
     "file": "entries/pages/_layout.svelte.js",
