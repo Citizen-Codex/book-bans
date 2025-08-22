@@ -1,10 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as topojson from 'topojson-client';
-	import { geoPath, geoAlbersUsa } from 'd3-geo';
-	import { csv } from 'd3-fetch';
-	import { scaleSequential } from 'd3-scale';
-	import { interpolateReds } from 'd3-scale-chromatic';
+	import { geoPath, geoAlbersUsa, csv, scaleSequential, interpolateReds } from 'd3';
 
 	const projection = geoAlbersUsa().scale(1300).translate([487.5, 305]);
 	const path = geoPath().projection(null);
