@@ -1,0 +1,123 @@
+@theme {
+	--font-mono: 'Roboto Mono', 'mono';
+	--font-serif: 'Junicode', 'serif';
+	--font-sans: 'Work Sans', 'sans-serif';
+	/* --font-display:  */
+
+	--color-yellow: #ffe10d;
+	--color-gray-dark: #121212;
+	--color-cream: #faf5ef;
+
+	/* branding */
+	--color-cc-night: #121212;
+	--color-cc-charcoal: #303334;
+	--color-cc-gray: #717680;
+	--color-cc-stone: #d1d1b6;
+	--color-cc-olive: #9c8808;
+	--color-cc-yellow: #ffdf00;
+	--color-cc-powder-blue: #c2d6f2;
+	--color-cc-blue: #4d4de3;
+	--color-cc-beige: #faf5ef;
+
+	--spacing-navbar: 3rem;
+}
+
+@utility content-well-sm {
+	@apply mx-auto w-full max-w-3xl px-4 py-8 md:px-8;
+}
+
+@utility content-well {
+	@apply mx-auto w-full max-w-4xl px-4 py-8 md:px-8;
+}
+
+@utility content-well-lg {
+	@apply mx-auto w-full max-w-7xl px-4 py-8 md:px-8;
+}
+
+/* @utility display-2xl {
+	@apply font-display text-7xl leading-23;
+}
+
+@utility display-xl {
+	@apply font-display text-6xl leading-18;
+}
+
+@utility display-lg {
+	@apply font-display text-5xl leading-15;
+}
+
+@utility display-md {
+	@apply font-display text-4xl leading-11;
+}
+
+@utility display-sm {
+	@apply font-display text-3xl leading-9;
+}
+
+@utility display-xs {
+	@apply font-display text-2xl leading-8;
+} */
+
+@utility serif-2xl {
+	@apply font-serif text-7xl leading-23 tracking-tight;
+}
+
+@utility serif-xl {
+	@apply font-serif text-6xl leading-18 tracking-tight;
+}
+
+@utility serif-lg {
+	@apply font-serif text-5xl leading-15 tracking-tight;
+}
+
+@utility serif-md {
+	@apply font-serif text-4xl leading-11 tracking-tight;
+}
+
+@utility serif-sm {
+	@apply font-serif text-3xl leading-9;
+}
+
+@utility serif-xs {
+	@apply font-serif text-2xl leading-8;
+}
+
+@utility sans-xl {
+	@apply font-sans text-xl leading-8;
+}
+
+@utility sans-lg {
+	@apply font-sans text-lg leading-7;
+}
+
+@utility sans-md {
+	@apply font-sans text-base leading-6;
+}
+
+@utility sans-sm {
+	@apply font-sans text-sm leading-5;
+}
+
+@utility sans-xs {
+	@apply font-sans text-xs leading-4;
+}
+
+@utility mono-xl {
+	@apply font-mono text-xl leading-8;
+}
+
+@utility mono-lg {
+	@apply font-mono text-lg leading-7;
+}
+
+@utility mono-md {
+	@apply font-mono text-base leading-6;
+}
+
+@utility mono-sm {
+	@apply font-mono text-sm leading-5;
+}
+
+@utility mono-xs {
+	@apply font-mono text-xs leading-4;
+}

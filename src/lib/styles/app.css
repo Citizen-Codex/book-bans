@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@import './fonts.css';
+@import './tokens.css';
+@import './animations.css';
+
+@layer base {
+  :root {
+    @apply font-sans leading-normal;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+
+}
