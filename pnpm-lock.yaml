@@ -20,6 +20,9 @@ importers:
       bits-ui:
         specifier: ^2.9.2
         version: 2.9.2(@internationalized/date@3.8.2)(svelte@5.38.0)
+      d3-geo:
+        specifier: ^3.1.1
+        version: 3.1.1
       dsv:
         specifier: ^0.0.5
         version: 0.0.5

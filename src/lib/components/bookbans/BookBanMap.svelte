@@ -5,24 +5,25 @@
 	import { csv } from 'd3-fetch';
 	import { scaleSequential } from 'd3-scale';
 	import { interpolateReds } from 'd3-scale-chromatic';
-	
-		const projection = geoAlbersUsa().scale(1300).translate([487.5, 305]);
+
+	const projection = geoAlbersUsa().scale(1300).translate([487.5, 305]);
 	const path = geoPath().projection(null);
 
 	let states = [];
 	let counties = [];
 	let selected;
 	let data = [];
-	let selectedYear = null;  
-	let activeButton = 'total'; 
+	let selectedYear = null;
+	let activeButton = 'total';
 
-	const colorScale = scaleSequential(interpolateReds).domain([0, 30]); // Adjust the domain based on your data
+	const colorScale = scaleSequential(interpolateReds).domain([0, 30]);
 
 	onMount(async () => {
-		const us = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-albers-10m.json')
-			.then(d => d.json());
+		const us = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-albers-10m.json').then(
+			(d) => d.json()
+		);
 
-		data = await csv("/assets/data/5_banmap.csv", d => {
+		data = await csv('/assets/data/5_banmap.csv', (d) => {
 			return {
 				...d,
 				year: +d.year,
@@ -34,20 +35,19 @@
 		counties = topojson.feature(us, us.objects.counties).features;
 	});
 
-	// Reactive color array for counties based on selectedYear
-	$: countyColors = counties.map(feature => {
+	$: countyColors = counties.map((feature) => {
 		let entry;
 		if (selectedYear) {
-			entry = data.find(d => d.county_fips === feature.id.toString() && +d.year === selectedYear);
+			entry = data.find((d) => d.county_fips === feature.id.toString() && +d.year === selectedYear);
 		} else {
-			entry = data.find(d => d.county_fips === feature.id.toString());
+			entry = data.find((d) => d.county_fips === feature.id.toString());
 		}
-		
+
 		if (entry) {
-			return { id: feature.id, color: colorScale(+entry.count) }; 
+			return { id: feature.id, color: colorScale(+entry.count) };
 		}
-		
-		return { id: feature.id, color: '#fff' }; 
+
+		return { id: feature.id, color: '#fff' };
 	});
 
 	function getCountyName(feature) {
@@ -57,38 +57,27 @@
 	}
 
 	function selectYear(year, buttonId) {
-		selectedYear = year ? +year : null;  // Convert year to number if it's not null
+		selectedYear = year ? +year : null;
 		activeButton = buttonId;
-		console.log("Selected Year:", selectedYear);
+		console.log('Selected Year:', selectedYear);
 	}
-
 </script>
 
 <!-- Add year selection buttons -->
 <div class="year-buttons">
-	<button 
-		class:active={activeButton === 'total'} 
-		on:click={() => selectYear(null, 'total')}>
+	<button class:active={activeButton === 'total'} on:click={() => selectYear(null, 'total')}>
 		Total
 	</button>
-	<button 
-		class:active={activeButton === '2021'} 
-		on:click={() => selectYear(2021, '2021')}>
+	<button class:active={activeButton === '2021'} on:click={() => selectYear(2021, '2021')}>
 		2021
 	</button>
-	<button 
-		class:active={activeButton === '2022'} 
-		on:click={() => selectYear(2022, '2022')}>
+	<button class:active={activeButton === '2022'} on:click={() => selectYear(2022, '2022')}>
 		2022
 	</button>
-	<button 
-		class:active={activeButton === '2023'} 
-		on:click={() => selectYear(2023, '2023')}>
+	<button class:active={activeButton === '2023'} on:click={() => selectYear(2023, '2023')}>
 		2023
 	</button>
-	<button 
-		class:active={activeButton === '2024'} 
-		on:click={() => selectYear('2024', '2024')}>
+	<button class:active={activeButton === '2024'} on:click={() => selectYear('2024', '2024')}>
 		2024
 	</button>
 </div>
@@ -96,32 +85,34 @@
 <svg viewBox="0 0 975 610">
 	<!-- Counties -->
 	{#each counties as feature}
-	  <path 
-		d={path(feature)} 
-		on:click={() => selected = feature} 
-		on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (selected = feature)}
-		tabindex="0"
-		role="button"
-		aria-label="Select county"
-		class="county"  
-		stroke="rgb(0 0 0 / 10%)" 
-		fill={countyColors.find(c => c.id === feature.id)?.color} />
+		<path
+			d={path(feature)}
+			on:click={() => (selected = feature)}
+			on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (selected = feature)}
+			tabindex="0"
+			role="button"
+			aria-label="Select county"
+			class="county"
+			stroke="rgb(0 0 0 / 10%)"
+			fill={countyColors.find((c) => c.id === feature.id)?.color}
+		/>
 	{/each}
 
 	<!-- State borders -->
 	<g fill="none" stroke="black">
 		{#each states as feature}
-			<path 
-			d={path(feature)} 
-			on:click={() => selected = feature} 
-			on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (selected = feature)}
-			tabindex="0"
-			role="button"
-			aria-label="Select state"
-			class="state" />
+			<path
+				d={path(feature)}
+				on:click={() => (selected = feature)}
+				on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && (selected = feature)}
+				tabindex="0"
+				role="button"
+				aria-label="Select state"
+				class="state"
+			/>
 		{/each}
 	</g>
-		
+
 	<!-- Highlight selected county -->
 	{#if selected}
 		<path d={path(selected)} fill="hsl(0 0% 50% / 20%)" stroke="black" stroke-width={2} />
@@ -132,13 +123,13 @@
 	{#if selected}
 		{getCountyName(selected)}
 	{/if}
-</div>	
+</div>
 
 <style>
 	.county {
-		transition: fill 0.5s ease; 
+		transition: fill 0.5s ease;
 	}
-	
+
 	.county:hover {
 		stroke: black;
 		stroke-width: 2;
@@ -160,11 +151,11 @@
 		padding: 8px 16px;
 		font-size: 1rem;
 		cursor: pointer;
-		transition: background-color 0.3s ease; /* Transition for background color */
+		transition: background-color 0.3s ease;
 	}
 
 	.year-buttons button.active {
-		background-color: darkblue; /* Darker color when active */
-		color: white; /* Change text color for contrast */
+		background-color: darkblue;
+		color: white;
 	}
 </style>

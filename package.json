@@ -51,6 +51,7 @@
     "@sveltejs/enhanced-img": "^0.6.1",
     "@sveltejs/svelte-scroller": "^2.0.7",
     "bits-ui": "^2.9.2",
+    "d3-geo": "^3.1.1",
     "dsv": "^0.0.5",
     "iconify-icon": "^3.0.0",
     "markdown-it": "^14.1.0",
