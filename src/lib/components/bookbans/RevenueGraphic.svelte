@@ -9,7 +9,7 @@
 	> after just a year of operation.
 </h2>
 
-<div id="stacks">
+<div id="stacks" class="mb-4">
 	<div class="stack-container">
 		<p class="label">$4 million</p>
 		<img id="stack1" src="assets/svgs/stack1.svg" alt="stack1" />

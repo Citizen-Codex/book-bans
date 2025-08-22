@@ -37,7 +37,7 @@
 			{#if copy.length > 0}
 				{#each copy as text, i}
 					<div class="step">
-						<div class="step-inner">
+						<div class="step-inner text-base md:text-lg">
 							<p>{@html text.value}</p>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 	}
 
 	.step-inner {
-		padding: 1rem;
+		padding: 1.5rem;
 		background-color: #ffffff;
 		border: 1px solid black;
 		box-shadow: 4px 6px 6px #00000046;
