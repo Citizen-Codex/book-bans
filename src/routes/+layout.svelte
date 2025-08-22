@@ -8,11 +8,7 @@
 	let { children } = $props();
 </script>
 
-<Head />
-
-<Navbar />
-
-<main class="mt-navbar min-h-[80vh]">
+<main class="">
 	{@render children()}
 </main>
 

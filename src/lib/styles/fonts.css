@@ -21,3 +21,10 @@
 	font-display: swap;
 	src: url('/fonts/WorkSans.ttf') format('truetype');
 }
+
+@font-face {
+	font-family: 'American Typewriter';
+	src: url('/fonts/American Typewriter Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

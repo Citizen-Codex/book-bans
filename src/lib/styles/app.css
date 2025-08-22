@@ -5,18 +5,22 @@
 @import './animations.css';
 
 @layer base {
-  :root {
-    @apply font-sans leading-normal;
-  }
+	:root {
+		@apply font-sans leading-normal;
+	}
 
-  em {
-    font-style: normal;
-  }
+	em {
+		font-style: normal;
+	}
 
-  iconify-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-  }
+	iconify-icon {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+	}
 
+	.copy a {
+		text-decoration: underline;
+		color: inherit;
+	}
 }

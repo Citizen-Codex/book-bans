@@ -1,8 +1,7 @@
 @theme {
 	--font-mono: 'Roboto Mono', 'mono';
-	--font-serif: 'Junicode', 'serif';
+	--font-serif: 'American Typewriter', 'serif';
 	--font-sans: 'Work Sans', 'sans-serif';
-	/* --font-display:  */
 
 	--color-yellow: #ffe10d;
 	--color-gray-dark: #121212;
@@ -22,6 +21,14 @@
 	--spacing-navbar: 3rem;
 }
 
+@utility copy {
+	@apply mx-auto my-8 max-w-3xl text-left text-base md:text-lg;
+}
+
+@utility section-header {
+	@apply mx-auto max-w-3xl font-serif text-3xl leading-loose font-bold md:text-4xl;
+}
+
 @utility content-well-sm {
 	@apply mx-auto w-full max-w-3xl px-4 py-8 md:px-8;
 }
@@ -34,90 +41,66 @@
 	@apply mx-auto w-full max-w-7xl px-4 py-8 md:px-8;
 }
 
-/* @utility display-2xl {
-	@apply font-display text-7xl leading-23;
+@utility display-2xl {
+	@apply font-serif text-6xl leading-relaxed md:text-7xl;
 }
 
 @utility display-xl {
-	@apply font-display text-6xl leading-18;
+	@apply font-serif text-5xl leading-relaxed md:text-6xl;
 }
 
 @utility display-lg {
-	@apply font-display text-5xl leading-15;
+	@apply font-serif text-4xl leading-normal md:text-5xl;
 }
 
 @utility display-md {
-	@apply font-display text-4xl leading-11;
+	@apply font-serif text-3xl leading-normal md:text-4xl;
 }
 
 @utility display-sm {
-	@apply font-display text-3xl leading-9;
+	@apply font-serif text-2xl leading-tight md:text-3xl;
 }
 
 @utility display-xs {
-	@apply font-display text-2xl leading-8;
-} */
-
-@utility serif-2xl {
-	@apply font-serif text-7xl leading-23 tracking-tight;
+	@apply font-serif text-xl leading-tight md:text-2xl;
 }
 
-@utility serif-xl {
-	@apply font-serif text-6xl leading-18 tracking-tight;
+@utility body-xl {
+	@apply font-sans text-lg leading-relaxed md:text-xl;
 }
 
-@utility serif-lg {
-	@apply font-serif text-5xl leading-15 tracking-tight;
+@utility body-lg {
+	@apply font-sans text-base leading-relaxed md:text-lg;
 }
 
-@utility serif-md {
-	@apply font-serif text-4xl leading-11 tracking-tight;
+@utility body-md {
+	@apply font-sans text-sm leading-normal md:text-base;
 }
 
-@utility serif-sm {
-	@apply font-serif text-3xl leading-9;
+@utility body-sm {
+	@apply font-sans text-xs leading-tight md:text-sm;
 }
 
-@utility serif-xs {
-	@apply font-serif text-2xl leading-8;
+@utility body-xs {
+	@apply font-sans text-[10px] leading-tight md:text-xs;
 }
 
-@utility sans-xl {
-	@apply font-sans text-xl leading-8;
+@utility detail-xl {
+	@apply font-mono text-lg leading-relaxed md:text-xl;
 }
 
-@utility sans-lg {
-	@apply font-sans text-lg leading-7;
+@utility detail-lg {
+	@apply font-mono text-base leading-relaxed md:text-lg;
 }
 
-@utility sans-md {
-	@apply font-sans text-base leading-6;
+@utility detail-md {
+	@apply font-mono text-sm leading-normal md:text-base;
 }
 
-@utility sans-sm {
-	@apply font-sans text-sm leading-5;
+@utility detail-sm {
+	@apply font-mono text-xs leading-tight md:text-sm;
 }
 
-@utility sans-xs {
-	@apply font-sans text-xs leading-4;
-}
-
-@utility mono-xl {
-	@apply font-mono text-xl leading-8;
-}
-
-@utility mono-lg {
-	@apply font-mono text-lg leading-7;
-}
-
-@utility mono-md {
-	@apply font-mono text-base leading-6;
-}
-
-@utility mono-sm {
-	@apply font-mono text-sm leading-5;
-}
-
-@utility mono-xs {
-	@apply font-mono text-xs leading-4;
+@utility detail-xs {
+	@apply font-mono text-[10px] leading-tight md:text-xs;
 }
