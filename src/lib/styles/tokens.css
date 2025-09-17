@@ -1,6 +1,7 @@
 @theme {
 	--font-mono: 'Roboto Mono', 'mono';
-	--font-serif: 'American Typewriter', 'serif';
+	--font-display: 'American Typewriter', 'serif';
+	--font-serif: 'Junicode', 'serif';
 	--font-sans: 'Work Sans', 'sans-serif';
 
 	--color-yellow: #ffe10d;
@@ -8,7 +9,7 @@
 	--color-cream: #faf5ef;
 
 	/* branding */
-	--color-cc-night: #121212;
+	--color-night: #121212;
 	--color-cc-charcoal: #303334;
 	--color-cc-gray: #717680;
 	--color-cc-stone: #d1d1b6;
@@ -26,7 +27,7 @@
 }
 
 @utility section-header {
-	@apply mx-auto max-w-3xl font-serif text-3xl leading-loose font-bold md:text-4xl;
+	@apply font-display mx-auto max-w-3xl text-3xl leading-loose font-bold md:text-4xl;
 }
 
 @utility content-well-sm {
@@ -42,27 +43,27 @@
 }
 
 @utility display-2xl {
-	@apply font-serif text-6xl leading-relaxed md:text-7xl;
+	@apply font-display text-6xl leading-relaxed md:text-7xl;
 }
 
 @utility display-xl {
-	@apply font-serif text-5xl leading-relaxed md:text-6xl;
+	@apply font-display text-5xl leading-relaxed md:text-6xl;
 }
 
 @utility display-lg {
-	@apply font-serif text-4xl leading-normal md:text-5xl;
+	@apply font-display text-4xl leading-normal md:text-5xl;
 }
 
 @utility display-md {
-	@apply font-serif text-3xl leading-normal md:text-4xl;
+	@apply font-display text-3xl leading-normal md:text-4xl;
 }
 
 @utility display-sm {
-	@apply font-serif text-2xl leading-tight md:text-3xl;
+	@apply font-display text-2xl leading-tight md:text-3xl;
 }
 
 @utility display-xs {
-	@apply font-serif text-xl leading-tight md:text-2xl;
+	@apply font-display text-xl leading-tight md:text-2xl;
 }
 
 @utility body-xl {

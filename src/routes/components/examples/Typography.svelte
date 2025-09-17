@@ -2,7 +2,7 @@
 	<div class="flex flex-col gap-4">
 		<p class="sans-lg w-fit border-b">Font Famillies</p>
 		<div class="pl-2">
-			<p class="font-serif">Serif</p>
+			<p class="font-display">Serif</p>
 			<p class="font-sans">Sans</p>
 			<p class="font-mono">Mono</p>
 		</div>
