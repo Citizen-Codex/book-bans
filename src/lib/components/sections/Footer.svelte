@@ -116,7 +116,7 @@
 							aria-label="Next"
 							class="flex h-8 w-8 items-center justify-center rounded-full border"
 						>
-							<iconify-icon icon="material-symbols:arrow-forward-ios-rounded" clas="ml-0.5"
+							<iconify-icon icon="material-symbols:arrow-forward-ios-rounded" class="ml-0.5"
 							></iconify-icon>
 						</button>
 					</div>

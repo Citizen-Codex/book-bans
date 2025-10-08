@@ -1,8 +1,8 @@
-title: 'Page Title'
-description: 'Page Description'
+title: "Who's Behind the Book Bans?"
+description: 'Book bans are a national issue. See what’s happening in your county.'
 publisher: 'Citizen Codex'
 publisher_url: https://www.citizencodex.com
-site_url: https://www.citizencodex.com
-# image:
-#   src: https://www.citizencodex.com/share.png
-#   alt: 'Image Alt'
+site_url: https://bookbans.citizencodex.com/
+image:
+  src: https://bookbans.citizencodex.com/thumbnail.png
+  alt: 'Thumbnail'
