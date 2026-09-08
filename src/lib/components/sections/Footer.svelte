@@ -32,20 +32,18 @@
 	);
 
 	interface Props {
-		theme: 'dark' | 'light' | 'accent';
-		disabled?: boolean;
+		theme?: 'dark' | 'light' | 'accent';
 	}
 
-	let { theme = 'dark', disabled = false, ...rest }: Props = $props();
+	let { theme = 'dark' }: Props = $props();
 
 	const options = {};
 
 	let carousel = $state<EmblaCarouselType>();
-	let activeIndex = $state(0);
 	let canScrollNext = $state(false);
 	let canScrollPrev = $state(false);
 
-	const onInit = (event) => {
+	const onInit = (event: CustomEvent<EmblaCarouselType>) => {
 		carousel = event.detail;
 		setCarouselState();
 
@@ -57,7 +55,6 @@
 	const setCarouselState = () => {
 		if (!carousel) return;
 
-		activeIndex = carousel.selectedScrollSnap();
 		canScrollNext = carousel.canScrollNext();
 		canScrollPrev = carousel.canScrollPrev();
 	};
@@ -68,7 +65,7 @@
 		'px-4 py-8 md:px-6',
 		{ 'bg-night text-white': theme === 'dark' },
 		{ 'bg-white text-black': theme === 'light' },
-		{ 'bg-cream text-black': theme === 'accent' }
+		{ 'bg-peach text-black': theme === 'accent' }
 	]}
 >
 	<div class="mx-auto flex max-w-6xl flex-col gap-12 overflow-hidden">
@@ -86,9 +83,10 @@
 								<a
 									href={story.link}
 									target="_blank"
+									rel="external noopener noreferrer"
 									class="group flex w-fit flex-col items-start gap-2 rounded transition-transform duration-300 hover:-translate-y-2"
 								>
-									<img src={story.thumbnail} alt={story.title} class="w-64 object-cover" />
+									<img src={story.thumbnail} alt={story.title} class="h-36 w-64 object-cover" />
 									<div class="flex max-w-[250px] flex-col gap-1">
 										<p class="display-xs font-serif">{story.title}</p>
 										<p class="detail-sm font-medium uppercase">{story.author}</p>
@@ -102,7 +100,8 @@
 				{#if canScrollNext || canScrollPrev}
 					<div class="flex items-center gap-2">
 						<button
-							onclick={carousel?.scrollPrev}
+							type="button"
+							onclick={() => carousel?.scrollPrev()}
 							disabled={!canScrollPrev}
 							aria-label="Previous"
 							class="flex h-8 w-8 items-center justify-center rounded-full border"
@@ -111,7 +110,8 @@
 							></iconify-icon>
 						</button>
 						<button
-							onclick={carousel?.scrollNext}
+							type="button"
+							onclick={() => carousel?.scrollNext()}
 							disabled={!canScrollNext}
 							aria-label="Next"
 							class="flex h-8 w-8 items-center justify-center rounded-full border"
@@ -129,7 +129,7 @@
 
 			<div class="detail-sm mb-1 flex flex-wrap gap-x-6 gap-y-2">
 				{#each links as { title, href } (title)}
-					<a {href} class=" hover:underline">{title}</a>
+					<a {href} rel="external" class="hover:underline">{title}</a>
 				{/each}
 			</div>
 
@@ -140,6 +140,7 @@
 						<a
 							{href}
 							target="_blank"
+							rel="external noopener noreferrer"
 							class="h-fit transition-transform hover:scale-110"
 							aria-label={title}
 						>
